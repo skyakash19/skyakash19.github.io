@@ -33,7 +33,7 @@ header {
     top: 0;
     left: 0;
     background: rgba(19, 19, 26, 0.9);
-    padding: 15px 0;
+    padding: 10px 0; /* Final unified padding */
     backdrop-filter: blur(10px);
     z-index: 1000;
     transition: all 0.3s ease-in-out;
@@ -43,49 +43,52 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 15px; /* Final unified container padding */
 }
 
 header h1 {
-    font-size: 24px;
+    font-size: 20px; /* Final unified header title size */
     color: var(--primary-color);
     text-transform: uppercase;
 }
-/* ... (Your existing CSS) ... */
+
+/* NAVIGATION */
+nav {
+    padding: 10px 0;
+    text-align: right;
+}
 
 nav ul {
     list-style: none;
     display: flex;
     padding: 0;
     margin: 0;
-    justify-content: flex-end; /* or space-between if you want the logo on the left */
+    justify-content: flex-end;
 }
 
 nav li {
-    margin: 0 12px; /* Adjusted spacing */
+    margin: 0 12px;
     position: relative;
 }
 
 nav a {
     text-decoration: none;
     color: var(--text-color);
-    font-size: 16px; /* Adjusted font size */
+    font-size: 16px;
     font-weight: 500;
-    transition: color 0.3s ease, transform 0.2s ease; /* Optimized transitions */
-    padding: 8px 12px; /* Adjusted padding */
+    padding: 8px 12px;
     border-radius: 5px;
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 
 nav a:hover {
     color: var(--accent-color);
-    transform: translateY(-2px); /* Reduced translate */
+    transform: translateY(-2px);
 }
 
 nav a.active {
     color: var(--accent-color);
 }
-
-/* Removed ::before pseudo-element for performance */
-/* The clip-path and scale transform were causing repaints */
 
 nav a::after {
     content: "";
@@ -103,44 +106,6 @@ nav a.active::after {
     width: 100%;
 }
 
-nav {
-    /* Removed background, blur, and box-shadow from nav for performance */
-    /* These properties can be expensive, especially on mobile */
-    padding: 10px 0; /* Adjusted padding */
-    text-align: right; /* Align to the right */
-}
-
-/* ... (Rest of your CSS) ... */
-
-/* Smaller header (optional - adjust as needed) */
-header {
-    padding: 8px 0; /* Reduced header padding */
-}
-
-header .container {
-    padding: 0 15px; /* Reduced container padding */
-}
-
-header h1 {
-    font-size: 18px; /* Reduced header title size */
-}
-/* Optional: Smaller header */
-header {
-    padding: 10px 0;
-}
-
-header h1 {
-    font-size: 20px;
-}
-
-/* If you want to make the header smaller too: */
-header {
-    padding: 10px 0; /* Reduced header padding */
-}
-
-header h1 {
-    font-size: 20px; /* Reduced header title size */
-}
 /* ===== HERO SECTION ===== */
 .hero {
     display: flex;
@@ -174,26 +139,46 @@ header h1 {
     color: var(--text-color);
 }
 
+/* ===== PROFILE IMAGE ===== */
 .profile-image {
-    width: 200px; /* Slightly larger image */
+    width: 200px;
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
     border: 5px solid var(--primary-color);
     box-shadow: var(--shadow-glow);
-    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease; /* Optimized transitions */
-    filter: grayscale(0%); /* Start without grayscale */
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+    filter: grayscale(0%);
     opacity: 0;
-    transform: translateY(-10px); /* Start slightly above */
-    animation: fadeInSlideUp 0.8s ease-in-out forwards; /* Faster, smoother animation */
+    transform: translateY(-10px);
+    animation: fadeInSlideUp 0.8s ease-in-out forwards;
 }
 
 .profile-image:hover {
-    transform: scale(1.05); /* Subtle scale on hover */
-    box-shadow: 0 0 25px rgba(0, 247, 255, 0.8); /* More intense glow */
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 247, 255, 0.8);
     border-color: var(--accent-color);
-    filter: grayscale(0%); /* Ensure no grayscale on hover */
+    filter: grayscale(0%);
 }
+
+/* ===== ACHIEVEMENT IMAGE ===== */
+.achievement-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 247, 255, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: block;
+    margin: 10px auto;
+}
+
+.achievement-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 247, 255, 0.25);
+}
+
 
 @keyframes fadeInSlideUp {
     from {
@@ -575,31 +560,6 @@ footer {
     box-shadow: 0 6px 15px rgba(5, 234, 43, 0.3); /* Hot pink shadow on hover */
 }
 
-/* ... (Your existing CSS) ... */
-
-/* New Feature: Dark Mode (Toggle Switch) */
-body.dark-mode {
-    background: linear-gradient(to bottom, #1a1a21, #13131a); /* Darker background */
-    color: #d0d0d0; /* Lighter text color */
-}
-
-body.dark-mode .contact-form input,
-body.dark-mode .contact-form textarea {
-    background: rgba(255, 255, 255, 0.08); /* Darker input background */
-    color: #d0d0d0;
-    border-color: rgba(0, 247, 255, 0.2);
-}
-
-body.dark-mode .contact-form input:focus,
-body.dark-mode .contact-form textarea:focus {
-    background: rgba(255, 255, 255, 0.15); /* Darker input background on focus */
-}
-
-body.dark-mode .contact-form button {
-    color: var(--text-color);
-}
-
-/* ... (Rest of your CSS) ... */
 
 
 /* Smooth Scrolling */
@@ -733,12 +693,12 @@ nav a::before, nav a::after { /* Remove ::before styles, only keep ::after for u
 }
 
 /* Reusing Project Styles */
-.project { /* ... (Existing project styles) ... */ }
-.project:hover { /* ... */ }
-.project h3 { /* ... */ }
-.project p { /* ... */ }
-.project-image { /* ... */ }
-.project-image:hover { /* ... */ }
+/* Removed empty ruleset */
+/* Removed empty ruleset */
+/* Removed empty ruleset for .project h3 */
+/* Removed empty ruleset */
+/* Removed empty ruleset */
+/* Removed empty ruleset for .project-image:hover */
 
 /* New Styles for Project Details */
 .project-details {
@@ -761,11 +721,6 @@ nav a::before, nav a::after { /* Remove ::before styles, only keep ::after for u
     margin-bottom: 10px;
 }
 
-.project-details a { /* Style the "View Dashboard" link */
-    /* ... (Use your existing button styles or create new ones) ... */
-}
-
-/* ... (Your existing CSS) ... */
 
 .project-gallery {
     display: flex; /* Use flexbox for horizontal layout */
@@ -852,18 +807,22 @@ nav a::before, nav a::after { /* Remove ::before styles, only keep ::after for u
 }
 
 .achievement-image {
-    max-width: 30%;
-    height: 30%;
+    width: 100%;
+    max-width: 300px; /* Sets a clear maximum width */
+    height: auto; /* Maintain aspect ratio */
     object-fit: cover;
-    border-radius: 10px; /* More rounded corners for images */
-    box-shadow: 0 3px 8px rgba(0, 247, 255, 0.1); /* More visible shadow for images */
-    transition: transform 0.3s ease;
+    border-radius: 12px; /* Slightly more elegant rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 247, 255, 0.15); /* Balanced initial shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: block; /* Prevent inline spacing issues */
+    margin: 10px auto; /* Centered and spaced */
 }
 
 .achievement-image:hover {
-    transform: scale(1.03); /* Slightly more scale on hover */
-    box-shadow: 0 5px 12px rgba(0, 247, 255, 0.2); /* Increased shadow on hover */
+    transform: scale(1.05); /* More noticeable but still subtle scale */
+    box-shadow: 0 8px 20px rgba(0, 247, 255, 0.25); /* Enhanced hover shadow */
 }
+
 
 .achievement-details {
     text-align: left;
@@ -880,6 +839,3 @@ nav a::before, nav a::after { /* Remove ::before styles, only keep ::after for u
     margin-bottom: 12px; /* Increased margin for list items */
     line-height: 1.6; /* Improved line height for readability */
 }
-
-/* ... (Your existing CSS) ... */
-
