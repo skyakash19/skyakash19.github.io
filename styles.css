@@ -1,0 +1,885 @@
+/* ==========================
+   ✨ ULTIMATE PORTFOLIO CSS ✨
+   ========================== */
+
+   :root {
+    --primary-color: #00f7ff;
+    --secondary-color: #2c2c54;
+    --accent-color: #ff0a78;
+    --bg-color: #13131a;
+    --text-color: #e0e0e0;
+    --shadow-glow: 0 0 15px rgba(0, 247, 255, 0.3);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    overflow-x: hidden;
+    transition: all 0.3s ease;
+}
+
+.container {
+    width: 85%;
+    margin: auto;
+    padding: 20px;
+}
+
+/* ===== HEADER & NAVIGATION ===== */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(19, 19, 26, 0.9);
+    padding: 15px 0;
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 24px;
+    color: var(--primary-color);
+    text-transform: uppercase;
+}
+/* ... (Your existing CSS) ... */
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    justify-content: flex-end; /* or space-between if you want the logo on the left */
+}
+
+nav li {
+    margin: 0 12px; /* Adjusted spacing */
+    position: relative;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 16px; /* Adjusted font size */
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.2s ease; /* Optimized transitions */
+    padding: 8px 12px; /* Adjusted padding */
+    border-radius: 5px;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+    transform: translateY(-2px); /* Reduced translate */
+}
+
+nav a.active {
+    color: var(--accent-color);
+}
+
+/* Removed ::before pseudo-element for performance */
+/* The clip-path and scale transform were causing repaints */
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 0;
+    height: 1px;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after,
+nav a.active::after {
+    width: 100%;
+}
+
+nav {
+    /* Removed background, blur, and box-shadow from nav for performance */
+    /* These properties can be expensive, especially on mobile */
+    padding: 10px 0; /* Adjusted padding */
+    text-align: right; /* Align to the right */
+}
+
+/* ... (Rest of your CSS) ... */
+
+/* Smaller header (optional - adjust as needed) */
+header {
+    padding: 8px 0; /* Reduced header padding */
+}
+
+header .container {
+    padding: 0 15px; /* Reduced container padding */
+}
+
+header h1 {
+    font-size: 18px; /* Reduced header title size */
+}
+/* Optional: Smaller header */
+header {
+    padding: 10px 0;
+}
+
+header h1 {
+    font-size: 20px;
+}
+
+/* If you want to make the header smaller too: */
+header {
+    padding: 10px 0; /* Reduced header padding */
+}
+
+header h1 {
+    font-size: 20px; /* Reduced header title size */
+}
+/* ===== HERO SECTION ===== */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('death.jpg') center center/cover no-repeat;
+    background-attachment: fixed;
+    opacity: 0.4;
+    z-index: -1;
+    animation: backgroundPan 10s linear infinite;
+}
+
+@keyframes backgroundPan {
+    0% { background-position: center top; }
+    100% { background-position: center bottom; }
+}
+
+.hero-content {
+    color: var(--text-color);
+}
+
+.profile-image {
+    width: 200px; /* Slightly larger image */
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--primary-color);
+    box-shadow: var(--shadow-glow);
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease; /* Optimized transitions */
+    filter: grayscale(0%); /* Start without grayscale */
+    opacity: 0;
+    transform: translateY(-10px); /* Start slightly above */
+    animation: fadeInSlideUp 0.8s ease-in-out forwards; /* Faster, smoother animation */
+}
+
+.profile-image:hover {
+    transform: scale(1.05); /* Subtle scale on hover */
+    box-shadow: 0 0 25px rgba(0, 247, 255, 0.8); /* More intense glow */
+    border-color: var(--accent-color);
+    filter: grayscale(0%); /* Ensure no grayscale on hover */
+}
+
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Optional: Subtle pulse animation (can be combined with the entrance animation) */
+
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.03); /* Smaller pulse */
+    }
+}
+
+/* New: Add a subtle border animation on hover */
+.profile-image::before { /* Use ::before for the border animation */
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    border-radius: 50%;
+    border: 2px solid transparent; /* Initially transparent */
+    transition: border-color 0.3s ease; /* Only animate border color */
+    z-index: -1; /* Place behind the image */
+}
+
+.profile-image:hover::before {
+    border-color: var(--accent-color); /* Hot pink border on hover */
+}
+
+/* Remove margin-bottom from .profile-image */
+/* It was causing a large gap below the image */
+.hero h2 {
+    font-size: 36px;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    opacity: 0.8;
+    margin-bottom: 30px;
+}
+
+/* ===== PROJECTS SECTION ===== */
+.projects {
+    padding: 100px 0; /* Increased padding */
+    text-align: center;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)); /* Subtle gradient */
+}
+
+.project {
+    background: rgba(255, 255, 255, 0.08); /* More transparent background */
+    backdrop-filter: blur(15px); /* Stronger blur */
+    padding: 30px; /* Increased padding */
+    margin: 30px 0; /* Increased margin */
+    border-radius: 15px; /* More rounded corners */
+    box-shadow: 0 0 30px rgba(0, 247, 255, 0.3); /* Softer, more intense glow */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease; /* Smooth transition for background */
+    position: relative;
+    overflow: hidden;
+    border: 1px solid transparent; /* Initially no border */
+}
+
+.project:hover {
+    transform: translateY(-15px); /* More pronounced lift */
+    box-shadow: 0 0 40px rgba(0, 247, 255, 0.5); /* More intense glow on hover */
+    background: rgba(255, 255, 255, 0.12); /* Slightly more opaque on hover */
+    border-color: rgba(0, 247, 255, 0.2); /* Subtle border on hover */
+}
+
+.project::before { /* Add a pseudo-element for a subtle overlay effect */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1)); /* Gradient overlay */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none; /* Prevent overlay from blocking clicks */
+}
+
+.project:hover::before {
+    opacity: 1; /* Show overlay on hover */
+}
+
+.project h3 {
+    color: var(--primary-color);
+    margin-bottom: 20px; /* Increased margin */
+    font-size: 24px; /* Slightly larger font size */
+    font-weight: 600; /* Slightly bolder font weight */
+    text-shadow: 0 0 10px rgba(0, 247, 255, 0.2); /* Subtle text shadow */
+}
+
+.project p {
+    color: var(--text-color);
+    line-height: 1.7; /* Improved line height for readability */
+    font-size: 16px; /* Slightly larger font size */
+}
+
+.project-media {
+    text-align: center;
+    margin-bottom: 20px; /* Increased margin */
+}
+
+.project-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Rounded corners for the image */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow on the image */
+    transition: transform 0.2s ease; /* Smooth transform on hover */
+}
+
+.project-image:hover {
+    transform: scale(1.02); /* Subtle scale on hover */
+}
+
+.project-links {
+    margin-top: 20px; /* Increased margin */
+}
+
+.project-links a {
+    display: inline-block; /* Make links behave like blocks */
+    padding: 10px 20px; /* Add padding to the links */
+    margin: 0 10px; /* Add margin between links */
+    color: var(--text-color);
+    text-decoration: none;
+    border: 1px solid var(--primary-color); /* Add a border */
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for background and color */
+}
+
+.project-links a:hover {
+    background-color: var(--primary-color); /* Background color change on hover */
+    color: var(--bg-color); /* Text color change on hover */
+}
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--secondary-color);
+    color: var(--text-color);
+    box-shadow: 0 -2px 5px rgba(0, 247, 255, 0.1);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 10px var(--primary-color); }
+    50% { box-shadow: 0 0 15px var(--accent-color); }
+    100% { box-shadow: 0 0 10px var(--primary-color); }
+}
+
+/* ... (your other CSS) ... */
+
+
+
+.hero-content {
+    color: var(--text-color);
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    height: 100%; /* Take full height of the hero section */
+    padding: 20px; /* Add some padding */
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--primary-color);
+    box-shadow: var(--shadow-glow);
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease; /* Optimized transitions */
+    filter: grayscale(0%); /* Start with no grayscale */
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+    filter: grayscale(0%); /* Ensure no grayscale on hover */
+    box-shadow: 0 0 25px rgba(0, 247, 255, 0.8); /* More intense glow */
+    border-color: var(--accent-color); /* Change border color on hover */
+}
+
+.hero h2 {
+    font-size: 48px; /* Larger title */
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    text-shadow: var(--shadow-glow); /* Add text shadow */
+}
+
+.hero p {
+    font-size: 20px;
+    opacity: 0.9; /* More opaque description */
+    margin-bottom: 30px;
+    line-height: 1.7; /* Improved line height for readability */
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center; /* Center the button */
+}
+
+.resume-button { /* Style the resume button */
+    display: inline-block;
+    padding: 15px 30px;
+    background: var(--primary-color);
+    color: var(--bg-color);
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 247, 255, 0.3);
+}
+
+.resume-button:hover {
+    background: var(--accent-color);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(10, 179, 231, 0.5);
+}
+
+/* ... other CSS ... */
+
+
+/* ... (Your existing CSS) ... */
+
+/* Performance Optimization */
+.contact-form input,
+.contact-form textarea {
+    /* ... (Existing styles) ... */
+    transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* Optimized transitions */
+}
+
+.contact-form button {
+    /* ... (Existing styles) ... */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Optimized transitions */
+}
+
+/* Design Enhancements */
+#contact {
+    /* ... (Existing styles) ... */
+    padding: 100px 0; /* Increased padding */
+    background: rgba(255, 255, 255, 0.05); /* Glassy background */
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    margin-bottom: 50px;
+    box-shadow: 0 0 25px rgba(0, 247, 255, 0.3); /* Stronger glow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contact:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 35px rgba(0, 247, 255, 0.5); /* More intense glow */
+}
+
+#contact h2 {
+    font-size: 40px;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    font-family: var(--font-family-title);
+    text-shadow: 0 0 10px rgba(0, 247, 255, 0.3);
+}
+
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px; /* Increased gap */
+}
+
+.contact-greeting {
+    font-size: 28px;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    font-family: var(--font-family-title);
+    text-shadow: 0 0 8px rgba(0, 247, 255, 0.2);
+}
+
+.eye-gif-container {
+    margin-bottom: 30px;
+}
+
+.eye-gif {
+    max-width: 700px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.contact-details {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact-details h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 24px;
+    font-family: var(--font-family-title);
+    text-shadow: 0 0 5px rgba(0, 247, 255, 0.15);
+}
+
+.contact-details p {
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+.contact-form {
+    max-width: 700px;
+    width: 95%;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Spacing between form elements */
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 247, 255, 0.3); /* More visible border */
+    background: rgba(255, 255, 255, 0.1); /* More opaque background */
+    color: var(--text-color);
+    transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* Optimized transitions */
+    box-shadow: 0 2px 5px rgba(0, 247, 255, 0.1); /* More prominent shadow */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    background: rgba(255, 255, 255, 0.2); /* More opaque on focus */
+    box-shadow: 0 3px 8px rgba(0, 247, 255, 0.2); /* Increased shadow on focus */
+}
+
+.contact-form textarea {
+    height: 180px;
+    resize: vertical;
+}
+
+.contact-form button {
+    padding: 15px 30px;
+    border: none;
+    background: var(--primary-color);
+    color: var(--bg-color);
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Optimized transitions */
+    box-shadow: 0 4px 10px rgba(0, 247, 255, 0.2); /* More prominent shadow */
+}
+
+.contact-form button:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(5, 234, 43, 0.3); /* Hot pink shadow on hover */
+}
+
+/* ... (Your existing CSS) ... */
+
+/* New Feature: Dark Mode (Toggle Switch) */
+body.dark-mode {
+    background: linear-gradient(to bottom, #1a1a21, #13131a); /* Darker background */
+    color: #d0d0d0; /* Lighter text color */
+}
+
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea {
+    background: rgba(255, 255, 255, 0.08); /* Darker input background */
+    color: #d0d0d0;
+    border-color: rgba(0, 247, 255, 0.2);
+}
+
+body.dark-mode .contact-form input:focus,
+body.dark-mode .contact-form textarea:focus {
+    background: rgba(255, 255, 255, 0.15); /* Darker input background on focus */
+}
+
+body.dark-mode .contact-form button {
+    color: var(--text-color);
+}
+
+/* ... (Rest of your CSS) ... */
+
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ... (Your existing CSS) ... */
+
+/* Hover Effects (already included in previous responses) */
+/* ... */
+
+/* ... (rest of the form styling from previous response) ... */
+/* ... other CSS ... */
+
+body {
+    background: url("black.jpg") center/cover no-repeat; /* GIF background */
+    background-attachment: fixed; /* Keep GIF fixed during scroll */
+    margin: 0; /* Remove default body margins */
+    overflow-x: hidden; /* Prevent horizontal scrollbar from GIF */
+}
+
+/* Optional: Add a subtle overlay for better text readability */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(19, 19, 26, 0.4); /* Adjust opacity as needed */
+    z-index: -1; /* Place overlay behind content */
+}
+
+.container {  /* Or whatever your main content container class is */
+    position: relative; /* Bring content above the GIF and overlay */
+    z-index: 1; /* Ensure content is on top */
+    /* ... other container styles ... */
+}
+
+/* ... rest of your CSS ... */
+.project-image { /* Or whatever class you use for your project images */
+    width: 500px; /* Set your desired width */
+    height: 300px; /* Set your desired height */
+    object-fit: cover; /* or contain, or fill, or scale-down */
+}
+
+/* ... other CSS ... */
+
+.project-image {
+    max-width: 100%; /* Responsive width */
+    height: auto;  /* Maintain aspect ratio */
+    object-fit: cover; /* Or contain if you don't want to crop */
+}
+
+.hero-background {
+    /* Use a static image if possible for better performance */
+    background-image: url('glasses-17902.gif')
+    /* ... other styles ... */
+}
+
+.profile-image {
+    margin-bottom: 20px; /* Adjusted margin */
+    /* ... other styles ... */
+}
+
+nav a:hover {
+    color: var(--accent-color);
+    transform: translateY(-1px);
+    background-color: rgba(0, 247, 255, 0.1); /* Simpler hover effect */
+}
+
+nav a::before, nav a::after { /* Remove ::before styles, only keep ::after for underline */
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 0;
+    height: 1px;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+    z-index: 2;
+}
+
+/* ... other CSS ... */
+
+#skills {
+    padding: 80px 0;
+}
+
+#skills h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.skill-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto; /* Center the list */
+    max-width: 800px; /* Limit the width of the list */
+    display: grid; /* Use grid for layout */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive columns */
+    gap: 20px; /* Spacing between items */
+}
+
+.skill-item {
+    background: rgba(255, 255, 255, 0.05); /* Glassy background for items */
+    backdrop-filter: blur(5px);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center; /* Center text within items */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 247, 255, 0.1);
+}
+
+.skill-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 247, 255, 0.2);
+}
+
+/* Styling for the Data Visualization Section */
+#data-visualization {
+    padding: 80px 0;
+    text-align: center; /* Center the section title */
+}
+
+#data-visualization h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+/* Reusing Project Styles */
+.project { /* ... (Existing project styles) ... */ }
+.project:hover { /* ... */ }
+.project h3 { /* ... */ }
+.project p { /* ... */ }
+.project-image { /* ... */ }
+.project-image:hover { /* ... */ }
+
+/* New Styles for Project Details */
+.project-details {
+    text-align: left; /* Align text to the left within details */
+    padding: 20px; /* Add some padding around details */
+}
+
+.project-details h4 {
+    color: var(--primary-color);
+    margin-top: 15px;
+}
+
+.project-details ul {
+    list-style-type: disc; /* Use bullet points for lists */
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.project-details li {
+    margin-bottom: 10px;
+}
+
+.project-details a { /* Style the "View Dashboard" link */
+    /* ... (Use your existing button styles or create new ones) ... */
+}
+
+/* ... (Your existing CSS) ... */
+
+.project-gallery {
+    display: flex; /* Use flexbox for horizontal layout */
+    flex-wrap: wrap; /* Allow images to wrap to the next line if needed */
+    justify-content: center; /* Center the images horizontally */
+    gap: 10px; /* Spacing between images */
+    margin-bottom: 20px; /* Space below the gallery */
+}
+
+.project-image {
+    width: calc(25% - 10px); /* Each image takes 25% of the container width (minus gap) */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Or contain, depending on your preference */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 247, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.project-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(0, 247, 255, 0.2);
+}
+
+/* Responsive adjustments (optional) */
+@media (max-width: 768px) { /* Adjust breakpoint as needed */
+    .project-image {
+        width: calc(50% - 10px); /* Two images per row on smaller screens */
+    }
+}
+
+@media (max-width: 500px) { /* Even smaller screens */
+    .project-image {
+        width: 100%; /* One image per row */
+    }
+}
+
+/* ... (Your existing CSS) ... */
+
+/* Extra Achievements Section */
+#extra-achievements {
+    padding: 80px 0;
+    text-align: center;
+    background: rgba(19, 19, 26, 0.7); /* Subtle background for the section */
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    margin-bottom: 40px; /* Space below the section */
+    box-shadow: 0 0 20px rgba(0, 247, 255, 0.2); /* Section glow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effect */
+}
+
+#extra-achievements:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(0, 247, 255, 0.3);
+}
+
+
+#extra-achievements h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(0, 247, 255, 0.3); /* Text shadow for the heading */
+}
+
+.achievement {
+    background: rgba(255, 255, 255, 0.08); /* Slightly more opaque background */
+    backdrop-filter: blur(8px); /* Reduced blur */
+    padding: 30px; /* Increased padding */
+    margin: 25px 0; /* Increased margin */
+    border-radius: 12px; /* More rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 247, 255, 0.15); /* More prominent shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.achievement:hover {
+    transform: translateY(-8px); /* More pronounced hover effect */
+    box-shadow: 0 6px 15px rgba(0, 247, 255, 0.25); /* Increased shadow on hover */
+}
+
+.achievement h3 {
+    color: var(--primary-color);
+    margin-bottom: 18px;
+    text-shadow: 0 0 5px rgba(0, 247, 255, 0.2); /* Text shadow for achievement title */
+}
+
+.achievement-image {
+    max-width: 30%;
+    height: 30%;
+    object-fit: cover;
+    border-radius: 10px; /* More rounded corners for images */
+    box-shadow: 0 3px 8px rgba(0, 247, 255, 0.1); /* More visible shadow for images */
+    transition: transform 0.3s ease;
+}
+
+.achievement-image:hover {
+    transform: scale(1.03); /* Slightly more scale on hover */
+    box-shadow: 0 5px 12px rgba(0, 247, 255, 0.2); /* Increased shadow on hover */
+}
+
+.achievement-details {
+    text-align: left;
+    padding: 25px; /* Increased padding */
+}
+
+.achievement-details ul {
+    list-style-type: disc;
+    margin-left: 25px; /* Increased margin for list items */
+    margin-bottom: 25px; /* Increased margin for list */
+}
+
+.achievement-details li {
+    margin-bottom: 12px; /* Increased margin for list items */
+    line-height: 1.6; /* Improved line height for readability */
+}
+
+/* ... (Your existing CSS) ... */
+
