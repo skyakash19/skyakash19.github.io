@@ -1,175 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Akash R A | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      background: linear-gradient(to right, #f4f8fb, #dfefff);
-      color: #1d1d1f;
-    }
-
-    header {
-      background-color: #0a66c2;
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.8rem;
-      font-weight: 700;
-    }
-
-    header p {
-      margin-top: 10px;
-      font-size: 1.2rem;
-      font-weight: 400;
-      opacity: 0.9;
-    }
-
-    .container {
-      max-width: 960px;
-      margin: 40px auto;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-      padding: 40px;
-    }
-
-    h2 {
-      border-left: 4px solid #0a66c2;
-      padding-left: 12px;
-      margin-top: 40px;
-      font-size: 1.6rem;
-      color: #0a66c2;
-    }
-
-    ul {
-      list-style-type: disc;
-      padding-left: 20px;
-      margin-top: 10px;
-    }
-
-    li {
-      margin-bottom: 8px;
-    }
-
-    p, li {
-      line-height: 1.6;
-      font-size: 1rem;
-    }
-
-    a {
-      color: #0a66c2;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-      color: #888;
-      margin-top: 40px;
-    }
-
-    @media screen and (max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      .container {
-        padding: 20px;
-        margin: 20px;
-      }
-      h2 {
-        font-size: 1.3rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akash R A - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
+    <header>
+        <div class="container">
+            <h1>Akash R A</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#data-visualization">Data-Visualization</a></li>
+                    <li><a href="#extra-achievements">Extra-Achievements</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <header>
-    <h1>Akash R A</h1>
-    <p>Full-stack Developer · DevOps & ML Engineer · ISE @ NIE Mysore</p>
-  </header>
+    
 
-  <div class="container">
-    <h2>Summary</h2>
-    <p>Full-stack developer specializing in secure financial applications, fraud detection, and risk assessment. Skilled in MERN, AI/ML, and DevOps, leveraging cloud infrastructure to enhance scalability and security in banking solutions. Passionate about FinTech innovation and blockchain-driven financial security.</p>
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <img src="Akash_profile.jpg" alt="Your Profile Picture" class="profile-image">
+            <h2>Welcome to Akash's Portfolio</h2>
+            <p>Passionate Information Science Engineer | Software Developer | AI & IoT Enthusiast</p>
+            <div class="hero-buttons">
+                <a href="Akash_Resume_JP.pdf" download="Akash_Resume.pdf" class="resume-button">View My
+                    Resume</a>
+            </div>
+        </div>
+    </section>
 
-    <h2>Education</h2>
-    <ul>
-      <li><strong>B.E. in Information Science and Engineering</strong> – NIE Mysore, CGPA: 8.858 (2022–2026)</li>
-      <li><strong>PUC – Science</strong> – Unity PU College, Mysore, 95.67% (2020–2022)</li>
-      <li><strong>SSLC</strong> – Unity English Medium High School, Mysore, 97.28% (2019–2020)</li>
-    </ul>
+    <section id="about" class="container">
+        <h2>About Me</h2>
+        <p>I am Akash R A, a passionate Information Science Engineer with expertise in software development,
+            cryptography, IoT, and AI. My projects showcase real-world applications in MERN stack, Java, Python, and
+            AI-driven solutions. I am a highly motivated and results-oriented individual with a strong work ethic and a
+            passion for learning new technologies. I am a team player and I am confident in my ability to contribute
+            to any project.</p>
+    </section>
 
-    <h2>Technical Skills</h2>
-    <ul>
-      <li>Languages: Java, Python, Go Lang, JavaScript, C, HTML, CSS</li>
-      <li>Frameworks: MERN (MongoDB, Express, React, Node.js), Django</li>
-      <li>Machine Learning: Scikit-learn, Pandas, Matplotlib</li>
-      <li>Version Control: Git & GitHub</li>
-      <li>DevOps & Cloud: AWS, Docker, Kubernetes, Jenkins, CI/CD</li>
-      <li>Finance & Security: Cryptography, Blockchain, API Security</li>
-    </ul>
+    <section id="skills" class="container">
+        <h2>Technical Skills</h2>
+        <ul class="skill-list">
+            <li class="skill-item">C</li>
+            <li class="skill-item">Java</li>
+            <li class="skill-item">Python</li>
+            <li class="skill-item">JavaScript</li>
+            <li class="skill-item">HTML</li>
+            <li class="skill-item">CSS</li>
+            <li class="skill-item">Node.js</li>
+            <li class="skill-item">React</li>
+            <li class="skill-item">REST APIs</li>
+            <li class="skill-item">MySQL</li>
+            <li class="skill-item">MongoDB</li>
+            <li class="skill-item">SQL</li>
+            <li class="skill-item">Encryption</li>
+            <li class="skill-item">AI/ML</li>
+            <li class="skill-item">IoT</li>
+            <li class="skill-item">Computer Networks</li>
+            <li class="skill-item">Cryptography & Network Security</li>
+            <li class="skill-item">Ethical Hacking</li>
+            <li class="skill-item">Prompt Engineering</li>
+        </ul>
 
-    <h2>Projects</h2>
-    <ul>
-      <li><strong>FinTrack – Smart Expense Manager</strong>: Secure finance platform with fraud detection & budget optimization using MERN, JWT & Power BI.</li>
-      <li><strong>Heart Disease Prediction using Machine Learning</strong> – Logistic Regression, KNN, Random Forest</li>
-      <li><strong>Smart Student Portal</strong> – Built with Django, including profile management, enrollment, PDF export</li>
-      <li><strong>Chatbot Integration</strong> – Used OpenAI API for chatbot features in Django apps</li>
-      <li><strong>Acura Sales Dashboard</strong>: Built with Power BI to optimize analytics and cut reporting time by 45%.</li>
-    </ul>
+        <h2>Soft Skills to Learn</h2>
+        <ul class="skill-list">
+            <li class="skill-item">Problem-Solving</li>
+            <li class="skill-item">Teamwork</li>
+            <li class="skill-item">Communication</li>
+            <li class="skill-item">Adaptability</li>
+            <li class="skill-item">Creativity</li>
+            <li class="skill-item">Time Management</li>
+        </ul>
+    </section>
 
-    <h2>Certifications</h2>
-    <ul>
-      <li>Operating Systems and You – Coursera</li>
-      <li>Blockchain in Financial Services – Coursera</li>
-      <li>Smart Device & Mobile Emerging Technologies – Google</li>
-    </ul>
+    <section id="projects" class="container">
+        <h2>Projects</h2>
 
-    <h2>Achievements</h2>
-    <ul>
-      <li>Ranked 5th in Taluk – SSLC School Topper</li>
-      <li>District High Scorer (Bhavsar Kshatriya Community)</li>
-      <li>Solved 100+ LeetCode Problems</li>
-    </ul>
+        <div class="project">
+            <h3>Carz Management System</h3>
+            <div class="project-media">
+                <img src="Mustang.jpg" alt="Carz Management System" class="project-image">
+            </div>
+            <p>A Carz Management System developed using HTML, CSS, and JavaScript for the front-end, and PHP for the
+                back-end. This project utilizes DBMS concepts to manage car inventory, track sales, handle customer
+                information, and generate reports. It uses [mention the specific database used, e.g., MySQL] for data
+                storage and retrieval.</p>
+        </div>
 
-    <h2>Activities & Interests</h2>
-    <ul>
-      <li>Lead Volunteer – Mysore Dasara Festival (Team Management)</li>
-      <li>NMMS Tutor – Math mentor for 8th-grade students</li>
-      <li>State-Level Drawing and Dance Competitor</li>
-    </ul>
+        <div class="project">
+            <h3>Coffee Day Management System</h3>
+            <div class="project-media">
+                <img src="coffee.gif" alt="Coffee Day Management System" class="project-image">
+            </div>
+            <p>A Java-based Coffee Day Management System. This project was developed using Java for the core logic
+                and functionality. It features menu management, order processing, inventory tracking, employee
+                management, and sales reporting. It utilizes [mention any specific technologies or libraries used,
+                e.g., Java Swing for the GUI, MySQL for the database, etc.].</p>
+        </div>
 
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:akashrelekar1904@gmail.com">akashrelekar1904@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/akash-relekar-527294309" target="_blank">linkedin.com/in/akash-relekar</a></p>
-    <p>GitHub: <a href="https://github.com/skyakash19" target="_blank">github.com/skyakash19</a></p>
-  </div>
+        <div class="project">
+            <h3>Foodie Express</h3>
+            <div class="project-media">
+                <img src="food.png" alt="Foodie Express Project" class="project-image">
+            </div>
+            <p>MERN stack-based food delivery system with real-time tracking. This project was developed using React
+                for the front-end, Node.js and Express.js for the back-end, and MongoDB for the database. It features
+                user authentication, restaurant listings, order management, and real-time delivery tracking.</p>
+        </div>
 
-  <footer>
-    &copy; 2025 Akash R A. All rights reserved.
-  </footer>
+        <div class="project">
+            <h3>Cryptosafe Image: A Java-Based Secure Image Encryption Application</h3>
+            <div class="project-media">
+              <img src="death.jpg" alt="Cryptosafe Image Screenshot" class="project-image">
+            </div>
+            <p>
+              Developed "Cryptosafe Image," a robust and user-friendly Java Swing application designed for secure image encryption and decryption. Leveraging the Java Cryptography Extension (JCE), this project implements Advanced Encryption Standard (AES) with password-based key derivation, ensuring strong protection against unauthorized access. The application utilizes `JPasswordField` for secure password input and incorporates efficient file handling with `Files.readAllBytes()` for optimal performance. Choosing Java allowed for platform independence and access to its rich cryptographic libraries. Cryptosafe Image provides users with a reliable solution for safeguarding sensitive visual information, offering peace of mind through enhanced data privacy and control. This project showcases proficiency in Java development, GUI design, and secure coding practices.
+            </p>
+            <div class="project-links">
+          </div>
+    </section>
 
+    
+
+    <section id="data-visualization" class="container">
+        <h2>Data Visualization & Dashboards</h2>
+    
+        <div class="project">
+            <h3>Acura Sales Dashboard (Power BI)</h3>
+            <div class="project-gallery">  <img src="powerbi.png" alt="Acura Sales Dashboard - Page 1" class="project-image">
+                <img src="power2.png" alt="Acura Sales Dashboard - Page 2" class="project-image">
+                <img src="power3.png" alt="Acura Sales Dashboard - Page 3" class="project-image">
+                <img src="power4.png" alt="Acura Sales Dashboard - Page 4" class="project-image">
+            </div>
+            <div class="project-details">
+                </div>
+        </div>
+            <div class="project-details">  <p>
+                    This interactive dashboard provides key insights into Acura's sales performance, 
+                    offering a comprehensive overview of sales trends, regional breakdowns, and 
+                    product-specific data.  Built using Power BI, the dashboard allows for dynamic 
+                    exploration of the data, enabling users to identify top-performing models, 
+                    analyze sales by region and paint color, and track key performance indicators 
+                    (KPIs) such as total sales, orders, and customer growth.
+                </p>
+    
+                <h4>Key Features & Functionality:</h4>
+                <ul>
+                    <li><strong>Interactive Charts & Graphs:</strong> Visualize sales data through 
+                        interactive charts, allowing for drill-downs and detailed analysis.</li>
+                    <li><strong>Dynamic Filtering:</strong> Filter data by year, region, product, and 
+                        other relevant dimensions to explore specific segments.</li>
+                    <li><strong>Key Performance Indicators (KPIs):</strong> Track total sales, orders, 
+                        and customer growth with prominently displayed KPIs.</li>
+                    <li><strong>Sales Trend Analysis:</strong> Identify trends and patterns in sales 
+                        data to inform strategic decision-making.</li>
+                    <li><strong>Regional & Product Breakdowns:</strong> Analyze sales performance by 
+                        region and product to identify key contributors and areas for improvement.</li>
+                </ul>
+    
+                <h4>Technical Skills Demonstrated:</h4>
+                <ul>
+                    <li><strong>Power BI Development:</strong> Design and development of interactive 
+                        dashboards using Power BI.</li>
+                    <li><strong>Data Analysis & Visualization:</strong> Transforming raw data into 
+                        actionable insights through effective visualizations.</li>
+                    <li><strong>DAX (Data Analysis Expressions):</strong> Utilization of DAX formulas 
+                        for creating calculated measures and custom metrics.</li>
+                    <li><strong>Data Modeling & Transformation:</strong> Cleaning, transforming, and 
+                        modeling data for optimal dashboard performance.</li>
+                    <li><strong>Interactive Dashboard Design:</strong> Creating user-friendly and 
+                        intuitive dashboards for data exploration.</li>
+                </ul>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section id="extra-achievements" class="container">
+        <h2>My Extra Achievements</h2>
+    
+        <div class="achievement">
+            <h3>Dasara Festival Volunteer</h3>
+            <div class="achievement-media">
+                <img src="Akash_Dasara.jpg" alt="Dasara Festival Volunteer" class="achievement-image">
+            </div>
+            <div class="achievement-details">
+                <p>Served as a volunteer with the Mysore City Co-operation during the Dasara Festival, a major cultural event attracting thousands of visitors. Responsibilities included:</p>
+                <ul>
+                    <li>Collaborating with traffic police to manage heavy traffic congestion.</li>
+                    <li>Assisting in crowd control efforts on the main Dasara day, ensuring public safety and order.</li>
+                    <li>Providing general assistance to festival attendees, contributing to a positive experience for all.</li>
+                </ul>
+            </div>
+        </div>
+    
+        <div class="achievement">
+            <h3>NMMS Exam Preparation Tutor</h3>
+            <div class="achievement-media">
+                <img src="NMMS.jpg" alt="NMMS Exam Preparation Tutor" class="achievement-image"> </div>
+            <div class="achievement-details">
+                <p>Contributed to the academic success of 8th-grade students in government schools by providing tutoring and guidance for the National Means-cum-Merit Scholarship (NMMS) exam. This involved:</p>
+                <ul>
+                    <li>Developing and delivering engaging lessons covering key concepts in mathematics, science, social studies, and mental ability.</li>
+                    <li>Conducting practice sessions and mock tests to familiarize students with the exam format and time constraints.</li>
+                    <li>Providing personalized feedback and support to students, addressing their individual learning needs and challenges.</li>
+                    <li>Mentoring students and motivating them to achieve their academic goals.</li>
+                    <li>Collaborating with teachers to identify areas where students needed additional support.</li>
+                </ul>
+                <p>This experience allowed me to make a positive impact on the lives of students from underprivileged backgrounds, empowering them to pursue higher education and achieve their full potential.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="contact" class="container">
+        <div class="contact-content">
+            <div class="contact-greeting">
+                Do you want to send me a message or reach out?
+            </div>
+
+            <div class="eye-gif-container">
+                <img src="eyes.webp" alt="Eye GIF" class="eye-gif">
+            </div>
+
+            <div class="contact-details">
+                <h3>My Contact Information</h3>
+                <p>Phone: +91 8660497408</p>
+                <p>Email: akashrelekar1904@gmail.com</p>
+                <p>College Email: 2022is_akashra_a@nie.ac.in</p>
+            </div>
+
+            
+        </div>
+    </section>
+
+    
+
+    <footer>
+        <p>&copy; 2025-26 Akash R A</p>
+    </footer>
+
+    
 </body>
-</html>
 
+</html>
